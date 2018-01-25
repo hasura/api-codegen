@@ -10,7 +10,32 @@ npm module to generate code for Hasura APIs in different languages/frameworks
 * Swift
 * Java
 
-If you want to add support for a language or a library within a language, follow the steps below:
+## Usage
+
+If you want to add support for a language or a library within a language, follow the steps below.
+
+`npm install api-codegen`
+
+```
+import {CodeGenerator} from 'api-codegen';
+
+const moduleName = 'Node Fetch'; // replace with module of choice
+let generator = new CodeGenerator(moduleName);
+let generatedCode;
+
+try {
+  generatedCode = generator.generate({
+    url: '', // replace with request URL
+    method: '', // replace with request Method (GET, POST, PUT, DELETE)
+    headers: {}, // add header key-value pairs
+    param: {}, // add request body
+    type: '' // specify 'file' for generating filestore API or leave it empty
+  });
+} catch (e) {
+  generatedCode = e.message;
+}
+console.log(generatedCode); // Generated Code Snippet
+```
 
 ## Getting started
 
@@ -38,5 +63,7 @@ Here the
 
 This shell script takes the module name, generates the Code Snippet based on the written function and saves the snippet file named as `test` in the given path. A docker image is built with the `test` file added. Docker container is run with the built image and is expected to only output the response of the sample http request.
 
+## Contributing
 
+We love community contributions. If you would like to contribute, raise a PR after testing your code generation logic.
 
