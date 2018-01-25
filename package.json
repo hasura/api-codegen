@@ -1,6 +1,6 @@
 {
   "name": "api-codegen",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "Generate code in different languages/frameworks for Hasura APIs",
   "main": "lib/api-codegen.js",
   "scripts": {
@@ -16,11 +16,10 @@
     "url": "https://github.com/hasura/api-codegen.git"
   },
   "keywords": [
-    "webpack",
-    "es6",
-    "library",
     "hasura",
-    "codegen"
+    "codegen",
+    "api-codegen",
+    "api"
   ],
   "author": "praveen@hasura.io",
   "license": "MIT",

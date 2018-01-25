@@ -19,8 +19,6 @@ If you want to add support for a language or a library within a language, follow
   * Run `yarn build` or `npm run build` to produce minified version of your library.
 2. Development mode
   * Having all the dependencies installed run `yarn dev` or `npm run dev`. This command will generate an non-minified version of your library and will run a watcher so you get the compilation on file change.
-3. Running the tests
-  * Run `yarn test` or `npm run test`
 
 ## Scripts
 
