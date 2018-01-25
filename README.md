@@ -12,8 +12,6 @@ npm module to generate code for Hasura APIs in different languages/frameworks
 
 ## Usage
 
-If you want to add support for a language or a library within a language, follow the steps below.
-
 `npm install api-codegen`
 
 ```
@@ -36,6 +34,8 @@ try {
 }
 console.log(generatedCode); // Generated Code Snippet
 ```
+
+If you want to add support for a language or a library within a language, follow the steps below.
 
 ## Getting started
 
