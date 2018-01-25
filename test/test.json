@@ -1,0 +1,15 @@
+{
+	"testCases": [
+		{
+			"url": "http://httpbin.org/anything",
+			"method": "POST",
+			"headers": {"content-type": "application/json"},
+			"param": {"type":"select","args":{"table":"author","columns":["*"]}}
+		},
+		{
+			"url": "http://httpbin.org/anything",
+			"method": "GET",
+			"headers": {"content-type": "application/json"}
+		}
+	]
+}

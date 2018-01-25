@@ -1,0 +1,45 @@
+{
+  "name": "api-codegen",
+  "version": "0.1.0",
+  "description": "Generate code in different languages/frameworks for Hasura APIs",
+  "main": "lib/api-codegen.js",
+  "scripts": {
+    "build": "webpack --env dev && webpack --env build",
+    "clean": "rm -Rf lib/*",
+    "dev": "webpack --progress --colors --watch --env dev",
+    "test": "mocha --require babel-core/register --colors ./test/*.spec.js",
+    "test:watch": "mocha --require babel-core/register --colors -w ./test/*.spec.js",
+    "test:module": "node ./test/snippetGenerator.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hasura/api-codegen.git"
+  },
+  "keywords": [
+    "webpack",
+    "es6",
+    "library",
+    "hasura",
+    "codegen"
+  ],
+  "author": "praveen@hasura.io",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hasura/hasura/api-codegen/issues"
+  },
+  "homepage": "https://github.com/hasura/api-codegen",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.3",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-env": "^1.6.1",
+    "chai": "^4.1.2",
+    "eslint": "^4.13.1",
+    "eslint-loader": "^1.9.0",
+    "mocha": "^4.0.1",
+    "webpack": "^3.10.0",
+    "yargs": "^10.0.3"
+  }
+}
