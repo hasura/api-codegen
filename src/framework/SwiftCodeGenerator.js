@@ -63,12 +63,12 @@ export default class SwiftCodeGenerator {
     const urlString = `let url = "${url}"` + Format.NEW_LINE;
     const headerString = `let headers: HTTPHeaders? = ` + (headers === null ? 'nil' : `${this.getStringifiedJson(headers)}`) + Format.NEW_LINE;
     const authHeaderComment = headers ? this.getAuthHeaderComment(headers) : '';
-    const requestParamString = `var requestParam: [String: Any]? = ` + (param === null ? `nil` : `${this.getStringifiedJson(param)}`) + Format.NEW_LINE;
+    const requestParamString = `let requestParam: [String: Any]? = ` + (param === null ? `nil` : `${this.getStringifiedJson(param)}`) + Format.NEW_LINE;
     const requestString = `Alamofire.request(url,` + Format.NEXT_LINE +
-      Format.TAB + Format.TAB + `method: ${this.getMethodTypeString(method)}` + Format.NEXT_LINE +
-      Format.TAB + Format.TAB + `headers: headers` + Format.NEXT_LINE +
-      Format.TAB + Format.TAB + `parameters: requestParam` + Format.NEXT_LINE +
-      Format.TAB + Format.TAB + `encoding: JSONEncoding.default` + `)` + Format.NEXT_LINE +
+      Format.TAB + Format.TAB + `method: ${this.getMethodTypeString(method)},` + Format.NEXT_LINE +
+      Format.TAB + Format.TAB + `parameters: requestParam,` + Format.NEXT_LINE +
+      Format.TAB + Format.TAB + `encoding: JSONEncoding.default,` + Format.NEXT_LINE +
+      Format.TAB + Format.TAB + `headers: headers` + `)` + Format.NEXT_LINE +
       `.responseJSON { response in ` + Format.NEXT_LINE +
       Format.TAB + Format.TAB + `debugPrint(response)` + Format.NEXT_LINE +
       this.getSaveAuthTokenComment(url, Format.TAB + Format.TAB) +
